@@ -1,4 +1,4 @@
-Setup a reverse proxy to provide temporary internet connection to an EC2 instances running in a private zone. The assumption is that your request goes via a jump box. Connection to internet might be required during development phase or to update patches.
+Setup a reverse proxy to provide temporary internet connection to an EC2 instance running in a private zone. The assumption is that your request goes via a jump box. Connection to internet might be required during development phase or to update patches.
 
 The idea is that a remote machine connects to the squid proxy running on your local machine via ssh reverse tunnel. In the example below fio was installed on a remote machine for benchmarking disk I/O.
 
@@ -11,8 +11,8 @@ This reverse proxy can also be used for installing packages such as pgadmin or j
 ```
 ssh -R 19999:localhost:3128 [HOST]
 sudo su -
-vi /etc/apt/apt.conf.d/squidProxy
-- Acquire::http::Proxy "http://localhost:19999";
+vi /etc/apt/apt.conf.d/squidProxy # My box is Ubuntu. You will need to figure out how to configure your package management system
+- Acquire::http::Proxy "http://localhost:19999"; 
 
 apt-get update
 install packages:
