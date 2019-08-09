@@ -7,9 +7,9 @@ This reverse proxy can also be used for installing packages such as pgadmin or j
 #### Open a terminal on your local machine and start squid container
 `docker-compose up`
 
-### open a new terminal and connect to reverse proxy on localhost. The <HOST> here is the remote machine IP
+#### open a new terminal and connect to reverse proxy on localhost. The [HOST] here is the remote machine IP
 ```
-ssh -R 19999:localhost:3128 <HOST>
+ssh -R 19999:localhost:3128 [HOST]
 sudo su -
 vi /etc/apt/apt.conf.d/squidProxy
 - Acquire::http::Proxy "http://localhost:19999";
