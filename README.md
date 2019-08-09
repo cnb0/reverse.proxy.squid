@@ -1,6 +1,6 @@
 Setup a reverse proxy to provide temporary internet connection to an EC2 instances running in a private zone. The assumption is that your request goes via a jump box. Connection to internet might be required during development phase or to update patches.
 
-The idea is that a remote machine connects to the squid proxy running on your local machine via [Reverse SSH Port Forwarding](https://blog.devolutions.net/2017/3/what-is-reverse-ssh-port-forwarding). In the example below fio was installed on a remote machine for benchmarking disk I/O.
+The idea is that a remote machine connects to the squid proxy running on your local machine via ssh reverse tunnel. In the example below fio was installed on a remote machine for benchmarking disk I/O.
 
 This reverse proxy can also be used for installing packages such as pgadmin or jupyter-hub during development phase
 
